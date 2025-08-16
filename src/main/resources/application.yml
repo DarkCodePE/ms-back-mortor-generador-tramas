@@ -1,0 +1,72 @@
+spring:
+  application:
+    name: tramas-backend
+
+  r2dbc:
+    url: r2dbc:mssql://${DB_HOST:localhost}:${DB_PORT:1433}/${DB_NAME:TRAMAS_DB}?encrypt=false&trustServerCertificate=true
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:rosalino123}
+    pool:
+      enabled: true
+      initial-size: 5
+      max-size: 20
+      max-idle-time: PT30M
+      validation-query: SELECT 1
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: America/Lima
+
+server:
+  port: ${SERVER_PORT:8080}
+
+logging:
+  level:
+    com.tramas: DEBUG
+    org.springframework.r2dbc: DEBUG
+    io.r2dbc.mssql: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+
+  r2dbc:
+    host: localhost
+    port: 1433
+    database: TRAMAS_DB_TEST
+    username: sa
+    password: testPassword
+
+logging:
+  level:
+    com.tramas: TRACE
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+  r2dbc:
+    host: sqlserver
+    port: 1433
+    database: TRAMAS_DB
+    username: sa
+    password: ${SA_PASSWORD}
+
+server:
+  port: 8080

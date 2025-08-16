@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: tramas-sqlserver
+    environment:
+      SA_PASSWORD: "TramasDB2024!"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    networks:
+      - tramas-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P TramasDB2024! -Q 'SELECT 1'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  tramas-backend:
+    build: .
+    container_name: tramas-backend
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      DB_HOST: sqlserver
+      DB_PORT: 1433
+      DB_NAME: TRAMAS_DB
+      DB_USERNAME: sa
+      SA_PASSWORD: "TramasDB2024!"
+    ports:
+      - "8080:8080"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    networks:
+      - tramas-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8080/actuator/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  sqlserver_data:
+    driver: local
+
+networks:
+  tramas-network:
+    driver: bridge

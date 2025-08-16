@@ -1,0 +1,821 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+		"name": "TRAMAS - Catálogos API",
+		"description": "Colección completa para probar los endpoints de catálogos del sistema TRAMAS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12345678"
+	},
+	"item": [
+		{
+			"name": "🏥 Profesionales",
+			"item": [
+				{
+					"name": "Obtener todos los profesionales",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/profesionales",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"profesionales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar profesionales por nombre",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/profesionales?nombre=García",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"profesionales"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "García"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener médicos (tipo 01)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/profesionales?tipoProfesional=01",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"profesionales"
+							],
+							"query": [
+								{
+									"key": "tipoProfesional",
+									"value": "01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener enfermeros (tipo 02)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/profesionales?tipoProfesional=02",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"profesionales"
+							],
+							"query": [
+								{
+									"key": "tipoProfesional",
+									"value": "02"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener profesional por ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/profesionales/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"profesionales",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar profesional por DNI",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/profesionales/buscar-por-documento?tipoDoc=1&numeroDoc=12345678",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"profesionales",
+								"buscar-por-documento"
+							],
+							"query": [
+								{
+									"key": "tipoDoc",
+									"value": "1"
+								},
+								{
+									"key": "numeroDoc",
+									"value": "12345678"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "🔧 Clasificaciones de Servicio",
+			"item": [
+				{
+					"name": "Obtener todas las clasificaciones",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/clasificaciones-servicio",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"clasificaciones-servicio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar clasificaciones por nombre",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/clasificaciones-servicio?nombre=consulta",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"clasificaciones-servicio"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "consulta"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener clasificación por código",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/clasificaciones-servicio/001",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"clasificaciones-servicio",
+								"001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "💰 Monedas",
+			"item": [
+				{
+					"name": "Obtener todas las monedas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/monedas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"monedas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar monedas por nombre",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/monedas?nombre=soles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"monedas"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "soles"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener soles peruanos (PEN)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/monedas/PEN",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"monedas",
+								"PEN"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener dólares americanos (USD)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/monedas/USD",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"monedas",
+								"USD"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "💳 Mecanismos de Pago",
+			"item": [
+				{
+					"name": "Obtener todos los mecanismos de pago",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/mecanismos-pago",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"mecanismos-pago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar mecanismos por nombre",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/mecanismos-pago?nombre=efectivo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"mecanismos-pago"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "efectivo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener mecanismos por subtipo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/mecanismos-pago?subtipo=digital",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"mecanismos-pago"
+							],
+							"query": [
+								{
+									"key": "subtipo",
+									"value": "digital"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener mecanismo por código",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/mecanismos-pago/0001",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"mecanismos-pago",
+								"0001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "📝 Motivos de Nota",
+			"item": [
+				{
+					"name": "Obtener todos los motivos de nota",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/motivos-nota",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"motivos-nota"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener motivos de nota de crédito",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/motivos-nota?tipoNota=CREDITO",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"motivos-nota"
+							],
+							"query": [
+								{
+									"key": "tipoNota",
+									"value": "CREDITO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener motivos de nota de débito",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/motivos-nota?tipoNota=DEBITO",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"motivos-nota"
+							],
+							"query": [
+								{
+									"key": "tipoNota",
+									"value": "DEBITO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar motivos por nombre",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/motivos-nota?nombre=descuento",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"motivos-nota"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "descuento"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener motivo por código",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/motivos-nota/0001",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"motivos-nota",
+								"0001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "📋 Endpoints de Apoyo",
+			"item": [
+				{
+					"name": "Obtener tipos de profesional",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/tipos-profesional",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"tipos-profesional"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener tipos de nota",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/catalogos/tipos-nota",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogos",
+								"tipos-nota"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "🔍 Health Check & Status",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/actuator/health",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Application Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/actuator/info",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"actuator",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Test común para todas las respuestas",
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test(\"Response time is less than 2000ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+					"});",
+					"",
+					"pm.test(\"Content-Type is application/json\", function () {",
+					"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+					"});",
+					"",
+					"// Test para endpoints que devuelven arrays",
+					"if (pm.response.json() instanceof Array) {",
+					"    pm.test(\"Response is an array\", function () {",
+					"        pm.expect(pm.response.json()).to.be.an('array');",
+					"    });",
+					"}",
+					"",
+					"// Test para endpoints que devuelven objetos",
+					"if (pm.response.json() instanceof Object && !(pm.response.json() instanceof Array)) {",
+					"    pm.test(\"Response is an object\", function () {",
+					"        pm.expect(pm.response.json()).to.be.an('object');",
+					"    });",
+					"}"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

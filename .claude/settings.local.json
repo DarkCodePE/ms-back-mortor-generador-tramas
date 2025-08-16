@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(mvn clean:*)",
+      "Bash(./mvnw clean:*)",
+      "Bash(./mvnw test:*)",
+      "Bash(set \"DB_NAME=TRAMAS_DB\")",
+      "Bash(set \"DB_PASSWORD=rosalino123\")",
+      "Bash(timeout:*)",
+      "Bash(curl:*)",
+      "Bash(\"C:\\Program Files\\Apache Maven\\bin\\mvn.cmd\" clean compile -DskipTests)",
+      "Bash(mvn compile:*)",
+      "Bash(.mvnw.cmd compile:*)",
+      "Bash(./mvnw:*)",
+      "Bash(sqlcmd:*)",
+      "Bash(mvn:*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "acceptEdits",
+    "additionalDirectories": [
+      "C:\\c\\Users\\Orlando\\Desktop"
+    ]
+  }
+}
